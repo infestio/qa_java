@@ -4,7 +4,6 @@ import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -39,7 +38,8 @@ public class FelineTest {
 
     @Test
     public void getKittensNoParamPositiveTest() {
-        feline.getKittens();
-        Mockito.verify(feline, Mockito.times(1)).getKittens(1);
+        int expectedNoParamCountKitten = 1;
+        Assert.assertEquals(expectedNoParamCountKitten, feline.getKittens());
     }
+
 }
